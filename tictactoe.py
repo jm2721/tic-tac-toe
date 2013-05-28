@@ -101,7 +101,7 @@ class tic_tac_toe:
 	def __init__(self):
 		self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 		self.window.set_size_request(500, 500)
-		winColor = gtk.gdk.color_parse('#234fdb')
+		winColor = gtk.gdk.color_parse('#0000FF')
 		self.window.modify_bg(gtk.STATE_NORMAL, winColor)
 
 		self.window.connect("delete_event", self.delete_event)
@@ -116,10 +116,10 @@ class tic_tac_toe:
 			positions[i].connect("clicked", self.change, None)
 
 
-		self.MainBox = gtk.VBox(homogeneous=True, spacing=5)
-		self.box1 = gtk.HBox(homogeneous=True, spacing=5)	
-		self.box2 = gtk.HBox(homogeneous=True, spacing=5)
-		self.box3 = gtk.HBox(homogeneous=True, spacing=5)
+		self.MainBox = gtk.VBox(homogeneous=True, spacing=3)
+		self.box1 = gtk.HBox(homogeneous=True, spacing=3)	
+		self.box2 = gtk.HBox(homogeneous=True, spacing=3)
+		self.box3 = gtk.HBox(homogeneous=True, spacing=3)
 
 		#Pack all the buttons into the boxes	
 		for i in range(9):
