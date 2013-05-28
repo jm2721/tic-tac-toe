@@ -1,0 +1,3 @@
+A simple tic-tac-toe game that I made with the pygtk graphics library.
+For two players (does not have AI, althought that might be cool to implement)
+Must have pygtk installed for it to work
