@@ -3,6 +3,7 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
+import pango
 import sys
 
 turn = 0
@@ -47,11 +48,13 @@ class tic_tac_toe:
 		if widget.get_label() == "":
 			if turn%2 == 1:
 				widget.set_label("X")
+				widget.get_child().modify_font(pango.FontDescription("sans 120"))
 				player = "X"
 				turn = turn + 1
 		
 			else :
 				widget.set_label("O")	
+				widget.get_child().modify_font(pango.FontDescription("sans 120"))	
 				player = "O"
 				turn = turn + 1
 		
@@ -107,11 +110,14 @@ class tic_tac_toe:
 		self.window.connect("delete_event", self.delete_event)
 		self.window.connect("destroy", self.destroy)
 		
+	#	self.btn = gtk.Button("HI")
+	#	self.btn.modify_font(pango.FontDescription("sans 48"))
 		#Make an array with the buttons	
 		for i in range(9):
-			global positions
+			global positions	
 			positions.append(gtk.Button(""))
 
+		
 		for i in range(9):
 			positions[i].connect("clicked", self.change, None)
 
